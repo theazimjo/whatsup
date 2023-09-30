@@ -9,11 +9,9 @@ import androidx.viewbinding.ViewBinding
 import io.reactivex.rxjava3.core.Observable
 
 abstract class BaseFragment<VB : ViewBinding>(
-    private val inflate: (
-        LayoutInflater, ViewGroup?, Boolean
-    ) -> VB
-) :
-    Fragment() {
+    private val inflate: (LayoutInflater, ViewGroup?, Boolean) -> VB
+) : Fragment() {
+
     private var _binding: VB? = null
     private val binding get() = _binding!!
 
@@ -33,10 +31,7 @@ abstract class BaseFragment<VB : ViewBinding>(
     }
 
     fun <T : Any, R : Any> Observable<T>.observe(observer: (R) -> Unit, mapper: (T) -> R) {
-        map(mapper)
-            .distinctUntilChanged()
-            .doOnNext(observer)
-            .subscribe() // You might want to return the Disposable for managing subscriptions
+        map(mapper).distinctUntilChanged().doOnNext(observer)
     }
 
 }

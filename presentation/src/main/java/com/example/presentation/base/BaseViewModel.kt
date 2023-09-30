@@ -7,12 +7,10 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import io.reactivex.rxjava3.subjects.PublishSubject
 
-
 abstract class BaseViewModel<State : Any, Input : Any, Effect : Any> : ViewModel() {
 
     private val stateSubject = BehaviorSubject.createDefault(this.getDefaultState())
-    val state: Observable<State>
-        get() = stateSubject
+    val state: Observable<State> get() = stateSubject
             .distinctUntilChanged()
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
