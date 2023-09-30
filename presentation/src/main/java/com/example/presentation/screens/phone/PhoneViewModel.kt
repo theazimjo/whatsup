@@ -18,6 +18,5 @@ class PhoneViewModel constructor(
     class Input
 
     override fun getDefaultState() = State()
-    override fun processInput(input: Input) {
-    }
+    override fun processInput(input: Input) {}
 }
