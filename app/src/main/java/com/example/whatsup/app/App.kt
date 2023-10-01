@@ -1,14 +1,11 @@
 package com.example.whatsup.app
 
+import com.example.whatsup.di.*
 import android.app.Application
-import com.example.whatsup.di.localModule
-import com.example.whatsup.di.remoteModule
-import com.example.whatsup.di.repositoryModule
-import com.example.whatsup.di.usercaseModule
-import com.example.whatsup.di.viewModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+
 
 class App : Application() {
     override fun onCreate() {
@@ -18,7 +15,14 @@ class App : Application() {
 //            dependency injecter uchun loglarni yozib boradi
             androidLogger()
             androidContext(this@App)
-            modules(repositoryModule, usercaseModule, localModule, remoteModule, viewModule)
+            modules(
+                appModule,
+                repositoryModule,
+                useCaseModule,
+                localModule,
+                remoteModule,
+                viewModelModule
+            )
 
         }
     }
