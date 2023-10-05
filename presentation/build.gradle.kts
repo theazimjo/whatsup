@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.presentation"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 21
@@ -55,4 +55,8 @@ dependencies {
     implementation("com.github.terrakok:cicerone:7.1")
 
     implementation("androidx.core:core-splashscreen:1.0.1")
+
+//    for otp code
+    implementation("com.github.aabhasr1:OtpView:v1.1.2-ktx")
+
 }

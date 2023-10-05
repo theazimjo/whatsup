@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Messenger</string>
     <string name="fragment_onboarding_continue">Continue</string>
+    <string name="Fragment_phone_sign_in">SIGN IN</string>
+    <string name="fragment_phone_number">Phone Number</string>
+    <string name="fragment_phone_title">Sign in to your account</string>
+    <string name="fragment_enter_otp_code_title">Enter OTP code</string>
+    <string name="fragment_code_verified">VERIFY</string>
+    <string name="fragment_code_sent_to">Code has ben sent to %s</string>
+    <string name="fragment_code_invalid_otp">Invalid OTP code</string>
 </resources>
